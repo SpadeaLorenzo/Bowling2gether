@@ -1,0 +1,45 @@
+@startuml name
+skinparam activity {
+    FontColor          white
+    AttributeFontColor white
+    FontSize           17
+    AttributeFontSize  15
+    AttributeFontname  Droid Sans Mono
+    BackgroundColor    #527BC6
+    BorderColor        black
+    ArrowColor         black
+}
+|Desktop|
+start
+:L'utente avvia la partita;
+|Server|
+:Manda info inizio partita ai giocatori;
+split
+    while (Numero turno corrente <= turni da fare) is (si)
+    while (Numero giocatore corrente <= numero giocatori) is (si)
+    :Manda informazioni al giocatore corrente;
+    |Mobile|
+    :Attiva il pulsante per tirare;
+    :L'utente esegue il suo tiro;
+    :manda le informazioni al server;
+    |Server|
+    :Manda le informazioni al Desktop;
+    |Desktop|
+    :applica le forze del tiro alla palla;
+    split
+    :manda il numero di birilli caduti al server;
+    split again
+    :visualizza punteggio giocatore nella classifica;
+    end split
+    |Server|
+    :salva punteggio giocatore;
+    end while (no)
+    end while (no)
+    :salva informazioni partita nel database;
+    stop
+split again
+    |Mobile|
+    :Visualizza pagina di gioco;
+    stop;
+    |Server|
+@enduml

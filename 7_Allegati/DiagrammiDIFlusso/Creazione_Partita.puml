@@ -1,0 +1,29 @@
+@startuml name
+skinparam activity {
+    FontColor          white
+    AttributeFontColor white
+    FontSize           17
+    AttributeFontSize  15
+    AttributeFontname  Droid Sans Mono
+    BackgroundColor    #527BC6
+    BorderColor        black
+    ArrowColor         black
+}
+|Desktop|
+start
+:L'utente crea una nuova partita;
+|Server|
+if (numero partite \nmassimo raggiunto?) is (si) then
+:Manda errore al desktop;
+|Desktop|
+:Visualizza errore;
+stop
+else (no)
+|Server|
+:Manda conferma al desktop 
+con codice univoco stanza;
+|Desktop|
+:Visualizza pagina lobby;
+:Visualizza codice stanza;
+stop
+@enduml

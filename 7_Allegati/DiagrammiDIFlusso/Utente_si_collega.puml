@@ -1,0 +1,44 @@
+@startuml name
+skinparam activity {
+    FontColor          white
+    AttributeFontColor white
+    FontSize           17
+    AttributeFontSize  15
+    AttributeFontname  Droid Sans Mono
+    BackgroundColor    #527BC6
+    BorderColor        black
+    ArrowColor         #222266
+}
+|Mobile|
+start
+:L'utente inserisce nome
+ utente e codice stanza;
+:L'untente preme "submit";
+|Server|
+if (La stanza esiste?) is (si) then
+    if (La stanza ha ancora posto?) is (si) then
+        if (Nome utente non è ancora utilizzato?) is (si) then
+            :Manda dati nuovo giocatore al desktop;
+            split
+            |Server|
+            :Manda conferma all'utente;
+            |Mobile|
+            :Visualizza pagina d'attesa;
+            stop
+            split again
+            |Desktop|
+            :Visualizza dati nuovo giocatore;
+            stop
+            end split
+            |Server|
+        else (no)
+        endif
+    else (no)
+    endif
+else (no)
+endif
+:Manda errore all'utente;
+|Mobile|
+:Visualizza errore;
+stop
+@enduml
