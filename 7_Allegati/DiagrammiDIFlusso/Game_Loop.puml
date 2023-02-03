@@ -9,6 +9,13 @@ skinparam activity {
     BorderColor        black
     ArrowColor         black
 }
+skinparam title {
+    FontColor          black 
+    FontSize           30
+    AttributeFontSize  15
+    AttributeFontname  Droid Sans Mono
+}
+title Game loop
 |Desktop|
 start
 :L'utente avvia la partita;

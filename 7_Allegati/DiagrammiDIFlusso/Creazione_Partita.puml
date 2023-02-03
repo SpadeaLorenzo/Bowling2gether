@@ -9,6 +9,13 @@ skinparam activity {
     BorderColor        black
     ArrowColor         black
 }
+skinparam title {
+    FontColor          black 
+    FontSize           20
+    AttributeFontSize  15
+    AttributeFontname  Droid Sans Mono
+}
+title Creazione partita
 |Desktop|
 start
 :L'utente crea una nuova partita;

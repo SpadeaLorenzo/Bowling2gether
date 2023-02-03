@@ -9,6 +9,13 @@ skinparam activity {
     BorderColor        black
     ArrowColor         #222266
 }
+skinparam title {
+    FontColor          black 
+    FontSize           30
+    AttributeFontSize  15
+    AttributeFontname  Droid Sans Mono
+}
+title Utente si collega alla partita
 |Mobile|
 start
 :L'utente inserisce nome
