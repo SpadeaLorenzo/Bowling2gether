@@ -1,0 +1,36 @@
+@startuml name
+skinparam usecase {
+    FontColor          white
+    AttributeFontColor white
+    FontSize           17
+    AttributeFontSize  15
+    AttributeFontname  Droid Sans Mono
+    BackgroundColor    #527BC6
+    BorderColor        black
+    ArrowColor         black
+}
+left to right direction
+:Utente:
+:Admin:
+rectangle Bowling2gether{
+    Utente --> (Visualizza sito web)    
+    Utente --> (Apre applicazione desktop)
+    Utente -> (Apre applicazione mobile)
+    Admin --> (Inserisce risultati partite nel db)
+    Admin -> (Legge history partite dal db)
+
+    (Visualizza Classifica) ..> (Legge history partite dal db) : <<include>>
+    (Visualizza sito web) <.. (Visualizza Classifica) : <<extends>>
+    (Visualizza sito web) <.. (Visualizza download) : <<extends>>
+    (Apre applicazione desktop) ..> (Creazione Lobby) : <<include>>
+    (Creazione Lobby) .> (Visualizzazione Lobby) : <<include>>
+    (Apre applicazione mobile) .> (Richiesta username) : <<include>>
+    (Apre applicazione mobile) ..> (Richiesta codice partita) : <<include>>
+    (Visualizzazione Lobby) .> (Avvio partita) : <<include>>
+    (Apre applicazione mobile) .> (Avvio partita) : <<include>>
+    (Avvio partita) <.. (Visualizza classifica partita) : <<extends>>
+    (Avvio partita) <.. (Menu di pausa [desktop]) : <<extends>>
+
+}
+
+@enduml
