@@ -2,7 +2,7 @@
 skinparam activity {
     FontColor          white
     AttributeFontColor white
-    FontSize           17
+    FontSize           20
     AttributeFontSize  15
     AttributeFontname  Droid Sans Mono
     BackgroundColor    #527BC6
