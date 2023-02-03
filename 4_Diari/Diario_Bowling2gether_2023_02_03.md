@@ -1,6 +1,6 @@
 # Bowling2gether | Diario di lavoro
 #### Lorenzo Spadea, Luca Lorenzon, Tommaso Castello
-### Trevano, 27 01 2023
+### Trevano, 03 02 2023
 
 ## Lavori svolti
 
@@ -46,15 +46,15 @@
 
 
 ##  Problemi riscontrati e soluzioni adottate
-Problema 1: Problemi con l'installazione dell'ensensione di Dart e Flutter per VS Code (Versione non compatibile)
+Problema 1 (Tommaso): Problemi con l'installazione dell'ensensione di Dart e Flutter per VS Code (Versione non compatibile)
 
 Soluzione 1: Aggiornare VS Code all'ultima versione disponibile (1.75.0) 
 
-Problema 2: Problemi con l'installazione di andorid studio e degli Android SDK (dipendenze di flutter)
+Problema 2 (Tommaso): Problemi con l'installazione di andorid studio e degli Android SDK (dipendenze di flutter)
 
 Soluzione 2: Utilizzare la rete nera per l'installazione di android studio e gli Android SDK
 
-Problema 3: Python installato ma non confgurato (Mancavano le variabili d'ambiente)
+Problema 3 (Lorenzo e Luca): Python installato ma non confgurato (Mancavano le variabili d'ambiente)
 
 Soluzione 3: Impostare le variabili d'ambiente
 ## Punto della situazione rispetto alla pianificazione
