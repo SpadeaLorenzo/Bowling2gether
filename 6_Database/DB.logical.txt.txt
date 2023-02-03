@@ -1,0 +1,26 @@
+Table DB.match {
+  code varchar(10)
+  data date
+  winner varchar(25)
+  turns int
+  is_done boolean
+  Indexes {
+    (code) [pk]
+  }
+}
+  
+
+Table DB.player {
+  id int [pk, increment] 
+  name varchar(25)
+  score int
+  match_code varchar [ref: > DB.match.code]
+}
+
+Table DB.rounds {
+  id int [pk, increment]
+  score_one int 
+  score_two int 
+  player_id int [ref: > DB.player.id]
+  match_code varchar [ref: > DB.match.code]
+ }
