@@ -30,6 +30,7 @@ rectangle Bowling2gether{
     (Apre applicazione mobile) .> (Avvio partita) : <<include>>
     (Avvio partita) <.. (Visualizza classifica partita) : <<extends>>
     (Avvio partita) <.. (Menu di pausa [desktop]) : <<extends>>
+    (Avvio partita) ..> (Schermata di fine partita) : <<include>>
 
 }
 
