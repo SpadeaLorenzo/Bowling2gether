@@ -1,0 +1,45 @@
+@startuml DB schema
+left to right direction
+
+skinparam ER {
+    FontColor          white
+    AttributeFontColor white
+    FontSize           17
+    AttributeFontSize  15
+    AttributeFontname  Droid Sans Mono
+    BackgroundColor    #527BC6
+    BorderColor        black
+    ArrowColor         black
+}
+
+entity "match" as e01 {
+  **code : VARCHAR(10) <<PRIMARY KEY>>**
+  --
+  **players** : INT
+  **data** : DATA
+  **winner** : VARCHAR(25)
+  **turns** : INT 
+  **is_done** : BOOLEAN
+}
+
+entity "player" as e02 {
+  **id : INT <<PRIMARY KEY>>**
+  --
+  **name**: VARCHAR(25)
+  **score** : INT
+  **match_code**: VARCHAR(10) <<FK>>
+}
+
+entity "rounds" as e03 {
+  **id : INT <<PRIMARY KEY>>**
+  --
+  **score_one** : INT <<DEFAULT -1>>
+  **score_two** : INT <<DEFAULT -1>>
+  **player_id** : INT <<FK>>
+  **match_code** : VARCHAR(10) <<FK>>
+}
+
+e01 }|--..o| e02
+e01 }|--..o| e03
+e02 }|--..o| e03
+@enduml
