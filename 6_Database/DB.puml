@@ -1,8 +1,4 @@
-@startuml
-' hide the spot
-
-' avoid problems with angled crows feet
-
+@startuml DB schema
 left to right direction
 
 skinparam ER {

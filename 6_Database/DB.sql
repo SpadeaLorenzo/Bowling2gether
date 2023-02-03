@@ -1,9 +1,3 @@
-/* 
- Di una partita si vogliono tenere conto di tutti i giocatori che vi hanno giocato,
- del punteggio di ogni giocatore, del vincitore della partita, del codice univoco con la quale 
- è stata generata, dei turni giocati, della data della partita
- */
-
 CREATE TABLE match(
     code VARCHAR(10) PRIMARY KEY UNIQUE,
     players INT,
@@ -34,4 +28,4 @@ CREATE TABLE rounds(
 
 /*
  stored routine per eliminare ogni 3 partite
-  */
+*/
