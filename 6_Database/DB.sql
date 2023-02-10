@@ -1,19 +1,19 @@
-CREATE TABLE match(
-    code VARCHAR(10) PRIMARY KEY UNIQUE,
+CREATE TABLE matches (
+    code VARCHAR(10) PRIMARY KEY,
     players INT,
-    data DATE,
+    data_match DATE,
     winner VARCHAR(25),
     turns INT,
-    is_done boolean
+    is_done TINYINT
 );
 
 
 CREATE TABLE player(
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(25),
-    score INT
+    score INT,
     match_code VARCHAR(10),
-    FOREIGN KEY match_code REFERENCES match(code)
+    FOREIGN KEY (match_code) REFERENCES  matches(code)
 );
 
 CREATE TABLE rounds(
@@ -22,8 +22,8 @@ CREATE TABLE rounds(
     score_two INT DEFAULT -1,
     player_id INT,
     match_code VARCHAR(10),
-    FOREIGN KEY match_code REFERENCES match(code),
-    FOREIGN KEY player_id REFERENCES player(id)
+    FOREIGN KEY (match_code) REFERENCES matches(code),
+    FOREIGN KEY (player_id) REFERENCES player(id)
 );
 
 /*

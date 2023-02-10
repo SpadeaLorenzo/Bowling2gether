@@ -1,5 +1,4 @@
 @startuml DB schema
-left to right direction
 
 skinparam ER {
     FontColor          white
@@ -39,7 +38,7 @@ entity "rounds" as e03 {
   **match_code** : VARCHAR(10) <<FK>>
 }
 
-e01 }|--..o| e02
-e01 }|--..o| e03
-e02 }|--..o| e03
+e01 |o.-|{ e02
+e01 |o.-|{ e03
+e02 |o.-|{ e03
 @enduml
