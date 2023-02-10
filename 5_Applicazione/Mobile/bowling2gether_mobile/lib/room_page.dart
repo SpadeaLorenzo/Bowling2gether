@@ -1,8 +1,11 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:sensors_plus/sensors_plus.dart';
-
+import 'package:vector_math/vector_math.dart';
 class RoomPage extends StatelessWidget {
   String username;
+
   RoomPage({Key? key, required this.username}) : super(key: key);
 
   @override
@@ -22,7 +25,7 @@ class RoomPage extends StatelessWidget {
                 height: 1.5,
               ),
               username,
-            )
+            ),
           ],
         ),
         Expanded(
@@ -30,9 +33,15 @@ class RoomPage extends StatelessWidget {
             child: ElevatedButton(
               child: const Text("lancia"),
               onPressed: () {
+                var t1 = DateTime.now();
+                var t2 = DateTime.now();
+                double degX = 0.0, degY = 0.0, degZ = 0.0; 
                 gyroscopeEvents.listen((GyroscopeEvent event) {
-                  print(event);
-                  //Output: [GyroscopeEvent (x: 0.08372224867343903, y: -0.09925820678472519, z: 0.21376553177833557)]
+                  t1 = DateTime.now();
+                  var deltaTime = t1.difference(t2);
+                  degX += event.x * (deltaTime.inMilliseconds / 1000);
+                  print(degrees(degX));
+                  t2 = DateTime.now();
                 });
               },
             ),

@@ -32,6 +32,7 @@ dependencies:
   flutter:
     sdk: flutter
   sensors_plus: ^2.0.1
+  vector_math: any
 
 
 
