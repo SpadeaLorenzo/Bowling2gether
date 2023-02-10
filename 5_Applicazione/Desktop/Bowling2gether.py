@@ -102,18 +102,18 @@ class Bowling2gether(ShowBase):
         self.render.setLight(directionalLightNP)
 
         
-        node = NodePath("PhysicsNode")
-        node.reparentTo(self.render)
+        # node = NodePath("PhysicsNode")
+        # node.reparentTo(self.render)
 
-        an = ActorNode("bowlingBall-physics")
-        anp = node.attachNewNode(an)
-        self.__builtin__.base.physicsMgr.attachPhysicalNode(an)
+        # an = ActorNode("bowlingBall-physics")
+        # anp = node.attachNewNode(an)
+        # self.__builtin__.base.physicsMgr.attachPhysicalNode(an)
 
         
         bowlingBall = self.loader.loadModel("Models/bowlingBall/bowling_ball.glb")
         bowlingBall.setScale(0.025)
 
-        bowlingBall.reparentTo(anp)
+        bowlingBall.reparentTo(scene)
 
 
 
